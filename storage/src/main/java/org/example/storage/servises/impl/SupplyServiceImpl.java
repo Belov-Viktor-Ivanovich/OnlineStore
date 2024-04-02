@@ -42,6 +42,6 @@ public class SupplyServiceImpl implements SupplyService {
 
     @Override
     public Supply getFirstFreeSupplyByName(String name) {
-        return repository.getSuppliesByNameAndUsernameIsNull(name);
+        return repository.getFirstByNameAndUsernameIsNull(name);
     }
 }
