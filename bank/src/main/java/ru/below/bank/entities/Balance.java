@@ -1,9 +1,6 @@
 package ru.below.bank.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,8 +12,9 @@ import lombok.Setter;
 @Getter
 public class Balance {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "accounts_id",referencedColumnName = "id")
+    private Accounts accounts;
     @Setter
     private int rub;
     @Setter

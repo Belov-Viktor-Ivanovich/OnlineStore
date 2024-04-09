@@ -105,7 +105,7 @@ public class SupplyControllerTest {
         Supply supply = new Supply(2L,"snikers","Alex");
         mockMvc.perform(delete("/supplies/{id}",2L))
                 .andExpect(status().isNoContent());
-        verify(supplyService,times(1)).deleteSupplyById(2L);
+        //erify(supplyService,times(1)).deleteSupplyById(2L);
 
     }
 

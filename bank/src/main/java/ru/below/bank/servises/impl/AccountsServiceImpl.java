@@ -2,6 +2,7 @@ package ru.below.bank.servises.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.below.bank.dto.RequestBank;
 import ru.below.bank.entities.Accounts;
 import ru.below.bank.repositories.AccountsRepositories;
 import ru.below.bank.servises.AccountsService;
@@ -12,31 +13,29 @@ public class AccountsServiceImpl implements AccountsService {
 
     @Override
     public Accounts createAccounts(Accounts accounts) {
-        return null;
+        return repositories.save(accounts);
     }
 
     @Override
     public Accounts getAccountsById(Long id) {
-        return null;
+        return repositories.getById(id);
     }
 
     @Override
-    public Accounts updateAccounts(Accounts supply) {
-        return null;
+    public Accounts updateAccounts(Accounts accounts) {
+
+        return repositories.save(accounts);
     }
 
     @Override
     public void deleteAccountsById(Long id) {
+        repositories.deleteById(id);
 
     }
 
     @Override
-    public Accounts addMoney(Long id) {
-        return null;
+    public Accounts changeMoney(Accounts accounts) {
+        return repositories.save(accounts);
     }
 
-    @Override
-    public Accounts takeMoney(Long id) {
-        return null;
-    }
 }

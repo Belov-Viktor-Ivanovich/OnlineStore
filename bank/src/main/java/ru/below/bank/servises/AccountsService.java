@@ -8,6 +8,5 @@ public interface AccountsService {
     Accounts getAccountsById(Long id);
     Accounts updateAccounts(Accounts supply);
     void deleteAccountsById(Long id);
-    Accounts addMoney(Long id);
-    Accounts takeMoney(Long id);
+    Accounts changeMoney(Accounts accounts);
 }
